@@ -20,7 +20,7 @@ export class UserRepository {
 
     // 2. Asegurarse que el username no existe
     const user = User.findOne({ username })
-    if (user) throw new Error('username already ecist')
+    if (user) throw new Error('username already exist')
     const id = crypto.randomUUID()
 
     User.create({
