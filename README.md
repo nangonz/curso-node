@@ -1,5 +1,6 @@
 Qué abarca este proyecto:
 Se utilizó Yaak que es una alternativa a postman para probar las rutas.
+Se utiliza standard para lintar el código
 
 1. Instalación del proyecto
 2. Usuarios en bas de datos 
