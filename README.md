@@ -3,6 +3,8 @@ Se utilizó Yaak que es una alternativa a postman para probar las rutas.
 Se utiliza standard para lintar el código
 
 1. Instalación del proyecto
+2. Uso de Middleware
+    Un middleware es una función que se ejecuta antes de que llegue a las peticiones
 2. Usuarios en bas de datos 
     Se usa una base de datos sencilla para agilizar y priorizar los contenidos actuales.
     Se utiliza una dependencia que se llama db-local. Esto nos permite crear una base de 
