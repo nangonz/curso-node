@@ -14,7 +14,8 @@ Se utiliza standard para lintar el código
     Las cookies no van a desaparecer, lo que se quitará son las Third party cookies que son
     las de análiticas, publicidad y trakeo.
     Las cookies del propio dominio van a seguir existiendo
-7. Json Web Token
-8. Refactorizar con un middleware
-9. Cerrar sesión
-10. Mas adelante Refresh Tokens, Passport y OAuth 2.0
+7. Rutas protegidas
+8. Json Web Token
+9. Refactorizar con un middleware
+10. Cerrar sesión
+11. Mas adelante Refresh Tokens, Passport y OAuth 2.0
