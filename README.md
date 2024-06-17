@@ -5,10 +5,14 @@ Se utiliza standard para lintar el código
 1. Instalación del proyecto
 2. Usuarios en bas de datos 
     Se usa una base de datos sencilla para agilizar y priorizar los contenidos actuales.
-    Se utiliza una dependencia que se llama db-local. Esto nos permite crear una base de datos local
-    para pruebas y no tener que levantar una base de datos más compleja. 
-    Esto puede servir para proyectos sencillos y que nos da unos métodos para buscar datos, para crear
-    y actualizarlos en nuestro disco duro.
+    Se utiliza una dependencia que se llama db-local. Esto nos permite crear una base de 
+    datos local para pruebas y no tener que levantar una base de datos más compleja.
+    Esto puede servir para proyectos sencillos y que nos da unos métodos para buscar 
+    datos, para crear y actualizarlos en nuestro disco duro. 
+    Para crear la id no hace falta que instalemos ninguna dependencia para generar ids. 
+    Normalmente una base de datos generan la id como MongoDB. En este caso se usa random UUID.
+    Random UUID tiene como punto negativo que es malo para hacer indexación dependiendo de la 
+    base de datos que utilices.
 3. Registro de usuarios
 4. Autenticación básica con login y password
 5. Verificación de autenticación (Usando hashes y salts)
