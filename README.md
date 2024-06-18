@@ -1,6 +1,9 @@
 Qué abarca este proyecto:
 Se utilizó Yaak que es una alternativa a postman para probar las rutas.
-Se utiliza standard para lintar el código
+Se utiliza standard para lintar el código.
+Se utiliza ejs, que es un template engine o sistema de plantillas.
+Existe otros como handlebars o moustage. Ejs es un sitema de plantillas
+basado en javascript.
 
 1. Instalación del proyecto
 2. Uso de Middleware
