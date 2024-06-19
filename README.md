@@ -22,11 +22,14 @@ basado en javascript.
 4. Autenticación básica con login y password
 5. Verificación de autenticación (Usando hashes y salts)
 6. Sesió de ususario con cookie
-    Local storage no sería recomendable y se analizará el porqué de esta afirmación.
-    Dentro de todas las opciones, las cookies son mejor que el localStorage
-    Las cookies no van a desaparecer, lo que se quitará son las Third party cookies que son
-    las de análiticas, publicidad y trakeo.
-    Las cookies del propio dominio van a seguir existiendo
+    La sesión es cuando el usuario entre diferentes navegaciones somos capaces de saber que
+    el usuario tiene la sesión iniciada y los permisos adecuados. Para esto se utilizará JWT
+    JSON Web Token que nos ayudará a guardar diferente información para intercambiar de manera segura.
+    Para almacenar el token usaremos cookies. Local storage no sería recomendable. Dentro de todas las 
+    opciones, las cookies son mejor que el localStorage porque tienen una capa de seguridad adicional
+    que se llama "http only" esto significa que no pueden ser accedidas a través de javascript y sólo se
+    pueden acceder en la petición en el servidor. Esto no significa que estemos 100% seguros pero es una
+    capa más de seguridad (no es vulnerable al cross site scripting).
 7. Rutas protegidas
 8. Json Web Token
 9. Refactorizar con un middleware
