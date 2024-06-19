@@ -23,13 +23,15 @@ basado en javascript.
 5. Verificación de autenticación (Usando hashes y salts)
 6. Sesió de ususario con cookie
     La sesión es cuando el usuario entre diferentes navegaciones somos capaces de saber que
-    el usuario tiene la sesión iniciada y los permisos adecuados. Para esto se utilizará JWT
-    JSON Web Token que nos ayudará a guardar diferente información para intercambiar de manera segura.
-    Para almacenar el token usaremos cookies. Local storage no sería recomendable. Dentro de todas las 
+    el usuario tiene la sesión iniciada y los permisos adecuados. Para esto se utiliza JWT
+    JSON Web Token que ayuda a guardar diferente información para intercambiar de manera segura.
+    Para almacenar el token se usará cookies. Local storage no sería recomendable. Dentro de todas las 
     opciones, las cookies son mejor que el localStorage porque tienen una capa de seguridad adicional
     que se llama "http only" esto significa que no pueden ser accedidas a través de javascript y sólo se
     pueden acceder en la petición en el servidor. Esto no significa que estemos 100% seguros pero es una
-    capa más de seguridad (no es vulnerable al cross site scripting).
+    capa más de seguridad (no es vulnerable al cross site scripting). Se instalará una dependencia
+    llamada cookie-parser que es un middleware de express que facilita la posiblidad de modificar
+    las cookies.
 7. Rutas protegidas
 8. Json Web Token
 9. Refactorizar con un middleware
