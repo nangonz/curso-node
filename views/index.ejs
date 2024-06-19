@@ -113,6 +113,7 @@
               <input type="text" id="register-confirm-password" name="confirm-password" required>
 
               <button type="submit">Register</button>
+              <span>&nbsp;</span>
             </form>
           </div>
         <% } %>
@@ -185,6 +186,12 @@
             registerSpan.innerText = 'Error al registrar usuario'
             registerSpan.style.color = 'red'
           }
+          return res.json()
+        }).then(data => {
+          setTimeout(()=>{
+            registerSpan.innerText = `${data.error}`
+            registerSpan.style.fontSize = '12px'
+          }, 1000)
         })
     })
 
