@@ -2,11 +2,16 @@ import express from 'express'
 import { PORT, SECRET_JWT_KEY } from './config.js'
 import { UserRepository } from './user-repository.js'
 import jwt from 'jsonwebtoken'
+import cookieParser from 'cookie-parser'
 
 const app = express()
 app.set('view engine', 'ejs')
-app.use(express.json())
 
+// MIDDLEWARES
+app.use(express.json())
+app.use(cookieParser())
+
+// END-POINTS
 app.get('/', (req, res) => {
   res.render('index')
 })
@@ -21,7 +26,14 @@ app.post('/login', async (req, res) => {
       SECRET_JWT_KEY,
       { expiresIn: '1h' }
     )
-    res.send({ user })
+    res
+      .cookie('access_token', token, {
+        httpOnly: true, // la cookie solo se puede acceder en el servidor
+        secure: process.env.NODE_ENV === 'production', // la cookies solo se puede acceder en https
+        sameSite: 'strict', // la cookie solo se puede acceder en el mismo dominio
+        maxAge: 1000 * 60 * 60 // la cookie tiene un tiempo de validez de 1 hora
+      })
+      .send({ user, token })
   } catch (error) {
     res.status(401).send(error.message)
   }
