@@ -13,6 +13,15 @@ app.use(cookieParser())
 
 // END-POINTS
 app.get('/', (req, res) => {
+  const token = req.cookies.access_token
+  if (!token) return res.render('index')
+
+  try {
+    const data = jwt.verify(token, SECRET_JWT_KEY)
+    res.render('index', data) // { _id, username }
+  } catch (error) {
+    res.render('index')
+  }
   res.render('index')
 })
 
@@ -54,9 +63,17 @@ app.post('/register', async (req, res) => {
 app.post('/logout', (req, res) => {})
 
 app.post('/protected', (req, res) => {
-  // TODO: if sesión del usuario
-  res.render('protected')
-  // TODO: else 401
+  const token = req.cookies.access_token
+  if (!token) {
+    return res.status(401).send('Access not authorized')
+  }
+
+  try {
+    const data = jwt.verify(token, SECRET_JWT_KEY)
+    res.render('protected', data) // { _id, username }
+  } catch (error) {
+    return res.status(401).send('access not authorized')
+  }
 })
 
 app.listen(PORT, () => {
