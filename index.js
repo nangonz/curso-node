@@ -67,7 +67,6 @@ app.post('/logout', (req, res) => {
   res
     .clearCookie('access_token')
     .json({ message: 'Logout successful' })
-    .redirect('/')
 })
 
 app.get('/protected', (req, res) => {
